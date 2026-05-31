@@ -3,7 +3,7 @@ import { dirname } from "path";
 import bodyParser from "body-parser";
 import { fileURLToPath } from "url";
 import dotenv from "dotenv";
-import { pool } from "./db.js";
+import pool from "./db.js";
 
 dotenv.config();
 const __dirname=dirname(fileURLToPath(import.meta.url));
