@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link
+    rel="stylesheet"
+    href="style.css"/>
+</head>
+<body>
+    <div class="bar">
+    <a href="/land" class="butt">Home</a>
+    <a href="/logout" class="butt">Log out</a>
+    <a href="/meal"class="butt">Meal Plans</a>
+    <a href="/work"class="butt">Workouts</a>
+    <a href="/bmi"class="butt">BMI Calculator</a>
+    <img src="Black Green Simple Fitness Logo.png" alt="FITX" class="logo">
+    </div>
+    <div class="page">
+        <div class="mp">
+                <div class="login">
+        <H2>BMI Calculator</H2>
+        <p> Enter the details</p>
+        <div class="input">
+            <label for="height">Height</label>
+             <input type="number" id="height" placeholder="">
+        </div>
+        <div class="input">
+            <label for="weight">Weight</label>
+            <input type="number" id="weight" placeholder="">
+        </div>
+        
+          <button type="submit" class="butt" onclick="calculate()">Calculate</button>
+          <div id="result" style="color:white; margin-top:10px;"></div>
+
+          </div>
+          </div>
+          </div>
+          <script>function calculate() {
+             
+    const weight = document.getElementById("weight").value;
+    const height = document.getElementById("height").value;
+    
+    const bmi = (weight / ((height / 100) ** 2)).toFixed(2);
+    
+    let category;
+    if (bmi < 18.5) category = " You are Underweight";
+    else if (bmi < 24.9) category = "You are Normal";
+    else if (bmi < 29.9) category = " You are Overweight";
+    else category = "Obese";
+    
+    document.getElementById("result").innerText = `Your BMI: ${bmi} - ${category}`;
+}</script>
+          </body>
+          </html>
