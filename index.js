@@ -8,7 +8,7 @@ import pool from "./db.js";
 dotenv.config();
 const __dirname=dirname(fileURLToPath(import.meta.url));
 const app=express();
-const port=4000;
+const port = process.env.PORT || 4000;
 app.use(bodyParser.urlencoded({extended:true}));
 app.get("/index",(req,res)=>{
 res.sendFile(__dirname+"/index.html");
