@@ -128,6 +128,6 @@ app.post("/logout", async (req, res) => {
 });
 app.use(express.static(__dirname));
 
-app.listen(port, () => {                  
+app.listen(port,'0.0.0.0', () => {                  
   console.log(`Server running on http://localhost:${port}`);
 });
